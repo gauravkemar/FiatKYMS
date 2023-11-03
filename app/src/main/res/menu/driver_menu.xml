@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/park_in"
+            android:icon="@drawable/ic_dashboard"
+            android:title="Park In" />
+        <item
+            android:id="@+id/search_vehicle"
+            android:icon="@drawable/ic_search"
+            android:title="Find/Search Vehicle" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout_black"
+            android:title="Logout" />
+    </group>
+
+</menu>

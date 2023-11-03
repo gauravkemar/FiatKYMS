@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="secondaryColor">#425FE7</color>
+    <color name="secondaryLightColor">#5ea9f0</color>
+    <color name="secondaryDarkColor">#004f8c</color>
+    <color name="primaryColor">#FF6D5E</color>
+    <color name="primaryLightColor">#ff976c</color>
+    <color name="primaryDarkColor">#FF4633</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="grey">#9A9A9A</color>
+    <color name="bgcolor">#FFFFFF</color>
+    <color name="green">#FF4CAF50</color>
+    <color name="lightblue">#F8FCFF</color>
+    <color name="colorPrimary2">#EBBD34</color>
+
+
+    <color name="colorSecondary">#FF03DAC5</color>
+    <color name="colorSecondaryDark">#FF018786</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#F4F4F4</color>
+    <color name="colorPrimaryLight">#006BC3</color>
+    <color name="colorPrimary">#074C85</color>
+    <color name="colorPrimaryDark">#D3AA30</color>
+    <color name="colorAccent">#EBBD34</color>
+    <color name="colorAccentDark">#D3AA30</color>
+    <color name="dark_grey">#676767</color>
+    <color name="recent_transaction">#026399</color>
+    <color name="light_grey">#FFAAAAAA</color>
+    <color name="transparent_grey">#26AAAAAA</color>
+    <color name="greyLight">#E6E6E6</color>
+    <color name="rippleColor">#253F70</color>
+    <color name="rippleColorRed">#253F70</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="d_green">#0AA000</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF5900</color>
+    <color name="blue">#307FFF</color>
+    <color name="light_blue">#f6f6f6</color>
+
+    <color name="radio_normal_color">#10c007</color>
+    <color name="radio_excess_color">#358bba</color>
+    <color name="radio_shortage_color">#FF0000</color>
+    <color name="bg_first_item">#F0F0F0</color>
+</resources>

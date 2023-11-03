@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/parkIn_vehicle_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/parkIn_vehicle_toolbar"
+                android:layout_width="match_parent"
+                app:navigationIcon="@drawable/ic_arrow_back_white"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/clViews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parkIn_vehicle_appbar" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnRecenter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:elevation="2dp"
+            android:onClick="@{listener::onClick}"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mapview"
+            app:layout_constraintEnd_toEndOf="@+id/mapview">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/navigation"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="RE - CENTER"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clViews"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:padding="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/layoutCalibrate"
+                android:background="@drawable/round_border_grey"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_btn_selector_left"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:text="RFID"
+                    android:textColor="@drawable/radiobuttonstate" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_btn_selector_right_red"
+                    android:textSize="18sp"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="BARCODE"
+                    android:textColor="@drawable/radiobuttonstate" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layoutCalibrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/llBarcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!--<Button
+                    android:id="@+id/getLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="@{listener::onClick}"
+                    android:text="Calibrate"
+                    android:textStyle="bold"
+                    android:visibility="visible" />-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/scanBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorPrimary"
+                    android:onClick="@{listener::onClick}"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:text="Scan Barcode"
+                    android:textColor="@color/white" />
+
+                <!--<Button
+                    android:id="@+id/scanBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:onClick="@{listener::onClick}"
+                    android:text="Scan Barcode"
+                    android:textStyle="bold"
+                    android:visibility="visible" />-->
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSpinnerVinList"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/spinner_backgroundnew"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btn_submit_vin"
+                app:layout_constraintEnd_toStartOf="@+id/btnClear"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <Spinner
+                    android:id="@+id/spinnerVin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow_down"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/llBarcode"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btn_submit_vin"
+                app:layout_constraintEnd_toStartOf="@+id/btnClear"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tvBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                    android:hint="Vehicle Identification NO.(VIN)"
+                    android:inputType="text"
+                    android:padding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/greyLight"
+                android:onClick="@{listener::onClick}"
+                android:text="Clear"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/clSpinnerVinList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/clSpinnerVinList"
+                app:layout_constraintTop_toTopOf="@+id/clSpinnerVinList" />
+
+            <Button
+                android:id="@+id/btn_submit_vin"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:layout_marginTop="5dp"
+                android:text="Submit"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/llBarcode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvNote"
+                />
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="start"
+                android:lines="2"
+                android:text="@string/note"
+                android:textColor="#7E7E7E"
+                android:textSize="13sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

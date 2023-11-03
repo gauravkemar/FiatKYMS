@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+        android:keyWidth="10%p"
+        android:horizontalGap="0px"
+        android:verticalGap="0px">
+
+        <Row>
+            <Key
+                android:keyLabel="Q"
+                android:keyOutputText="Q" />
+            <Key
+                android:keyLabel="W"
+                android:keyOutputText="W" />
+            <Key
+                android:keyLabel="E"
+                android:keyOutputText="E" />
+            <!-- Add more keys for the remaining letters -->
+            <!-- ... -->
+        </Row>
+
+        <Row>
+            <Key
+                android:keyLabel="A"
+                android:keyOutputText="A" />
+            <Key
+                android:keyLabel="S"
+                android:keyOutputText="S" />
+            <Key
+                android:keyLabel="D"
+                android:keyOutputText="D" />
+            <!-- Add more keys for the remaining letters -->
+            <!-- ... -->
+        </Row>
+
+        <!-- Continue adding more rows for numbers, symbols, etc. -->
+        <!-- ... -->
+
+</Keyboard>

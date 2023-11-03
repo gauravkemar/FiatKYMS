@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Fiat KYMS</string>
+    <string name="powered_by_splash_txt">Powered by <b>Kemar Port Automation Pvt Ltd</b></string>
+
+    <string name="note"><b>Note :</b> Press the yellow button on the side to scan barcode, Press clear button to clear barcode.</string>
+    <string name="vin_exist"><center>VIN already exists!!</center>\n<center>Please Try with different VIN</center></string>
+
+    <string name="log_in">LogIn</string>
+    <string name="logout">Logout</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="kppvms">KPP-VMS</string>
+    <string name="version_1_0">VERSION 1.0</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="recent_transaction">Recent Transaction</string>
+    <string name="vehicle_parked">Vehicle Parked</string>
+    <string name="total_distance_remaining">Total Distance Remaining</string>
+    <string name="select_period">Select Period</string>
+
+    <string-array name="model">
+        <item>Nexon Ev</item>
+        <item>Jeep Commander</item>
+        <item>Jeep Compass</item>
+
+
+    </string-array>
+    <string-array name="color">
+        <item>White</item>
+        <item>Black</item>
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Silver</item>
+        <item>Grey</item>
+
+    </string-array>
+</resources>

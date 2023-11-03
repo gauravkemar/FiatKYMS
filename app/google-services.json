@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "943632512622",
+    "project_id": "testing-db287",
+    "storage_bucket": "testing-db287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943632512622:android:1575e8c3c7094919b4987f",
+        "android_client_info": {
+          "package_name": "com.example.fiatkyms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhRk3n5hW7PWJ3zccWDaGbnU6PI6iLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943632512622:android:c735b679323c6343b4987f",
+        "android_client_info": {
+          "package_name": "com.example.rfidaoademo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhRk3n5hW7PWJ3zccWDaGbnU6PI6iLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943632512622:android:ac49da7f2f2cba59b4987f",
+        "android_client_info": {
+          "package_name": "com.example.testingaudiofiles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhRk3n5hW7PWJ3zccWDaGbnU6PI6iLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943632512622:android:973a0f42d20f3d03b4987f",
+        "android_client_info": {
+          "package_name": "com.kemar.newiskconapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhRk3n5hW7PWJ3zccWDaGbnU6PI6iLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943632512622:android:11ffb90e206e1bf6b4987f",
+        "android_client_info": {
+          "package_name": "com.kemarport.kymsmahindra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943632512622-htna8476461jpudnq754mair6nnf3brs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kemarport.kymsmahindra",
+            "certificate_hash": "5ea359bbb3fcd8a23bf92bdde9d0ddd838a4735d"
+          }
+        },
+        {
+          "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfhRk3n5hW7PWJ3zccWDaGbnU6PI6iLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943632512622-42k417fu6smckop3ovi66uk2d4lhdi76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

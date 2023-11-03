@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/set_geofence_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/set_geofence_toolbar"
+                android:layout_width="match_parent"
+                app:navigationIcon="@drawable/ic_arrow_back_white"
+                android:layout_height="?attr/actionBarSize">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/clcontainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="0.75" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnRecenter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:elevation="2dp"
+            android:onClick="@{listener::onClick}"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mapview"
+            app:layout_constraintEnd_toEndOf="@+id/mapview">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/navigation"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="RE - CENTER"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapview"
+            app:layout_constraintVertical_weight="0.25">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSpinnerTag"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/spinner_background"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/add_geofence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Spinner
+                    android:id="@+id/spinnerPolygon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/down"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/colorAccentDark" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_geofence"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/rounded_left_green"
+                android:drawableStart="@drawable/ic_add"
+                app:drawableTint="@color/white"
+
+                android:paddingHorizontal="5dp"
+                android:text="Add"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bt_clear"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clSpinnerTag" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_clear"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_right_white"
+                android:onClick="@{listener::onClick}"
+                android:text="Clear"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/update_geofence"
+                app:layout_constraintHorizontal_weight="0.2"
+                app:layout_constraintStart_toEndOf="@+id/add_geofence"
+                app:layout_constraintTop_toBottomOf="@+id/clSpinnerTag" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/update_geofence"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:background="@drawable/rounded_left_yellow"
+                android:drawableStart="@drawable/ic_add"
+                app:drawableTint="@color/white"
+                android:onClick="@{listener::onClick}"
+                android:paddingHorizontal="5dp"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bt_delete"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintStart_toEndOf="@+id/bt_clear"
+                app:layout_constraintTop_toBottomOf="@+id/clSpinnerTag" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_delete"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_right_red"
+                android:onClick="@{listener::onClick}"
+                android:text="Delete"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.2"
+                app:layout_constraintStart_toEndOf="@+id/update_geofence"
+                app:layout_constraintTop_toBottomOf="@+id/clSpinnerTag" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

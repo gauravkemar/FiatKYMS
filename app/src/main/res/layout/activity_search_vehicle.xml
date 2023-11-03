@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    >
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/search_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/search_vehicle_appbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/search_vehicle_toolbar"
+                        android:layout_width="match_parent"
+                        app:title="Find/Search Vehicle"
+                        app:titleTextColor="@color/white"
+                        app:navigationIcon="@drawable/ic_arrow_back_white"
+                        android:layout_height="?attr/actionBarSize">
+
+                    </androidx.appcompat.widget.Toolbar>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin ="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_vehicle_appbar">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutInProcess"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutParked"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="0.3"
+                                android:src="@drawable/ic_picked" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:gravity="start"
+                                android:orientation="vertical"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Yard In"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvInprocess"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:lines="1"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutParked"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp"
+                        android:clickable="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutReparked"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@+id/layoutInProcess"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="0.3"
+                                android:src="@drawable/ic_parked" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:gravity="start"
+                                android:orientation="vertical"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Parked"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvParked"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:lines="1"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutReparked"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="2dp"
+                        android:clickable="true"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutDelivered"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@+id/layoutParked"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="0.3"
+                                android:src="@drawable/ic_reparked" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:gravity="start"
+                                android:orientation="vertical"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Reparked"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvReparked"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:lines="1"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layoutDelivered"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@+id/layoutReparked"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="25dp"
+                                android:layout_weight="0.3"
+                                android:src="@drawable/ic_dropped" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:gravity="start"
+                                android:orientation="vertical"
+                                android:paddingTop="12dp"
+                                android:paddingBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Yard Out"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvDispatched"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:lines="1"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutDetails"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutEdSearch"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintHorizontal_weight="0.7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/mcv_btnClear"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Vehicle Identification Number"
+                            android:inputType="text"
+                            android:padding="10dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcv_btnClear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:clickable="true"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintHorizontal_weight="0.3"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/layoutEdSearch"
+                        app:layout_constraintTop_toTopOf="@+id/layoutEdSearch"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutEdSearch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="12sp"
+                            android:paddingTop ="13dp"
+                            android:paddingBottom ="13dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:background="@drawable/round_border_blue"
+                            android:textColor="@color/blue"
+                            android:text="CLEAR"
+                            />
+                    </com.google.android.material.card.MaterialCardView>
+                    <!-- <com.google.android.material.button.MaterialButton
+                         android:id="@+id/btnClear"
+                         android:layout_width="0dp"
+                         android:layout_height="0dp"
+                         android:layout_marginEnd="10dp"
+                         android:backgroundTint="@color/greyLight"
+                         android:text="Clear"
+                         android:layout_marginTop="5dp"
+                         android:clickable="true"
+                         app:layout_constraintHorizontal_weight="0.3"
+                         android:background="@drawable/round_border_blue"
+                         android:textColor="@color/black"
+                         app:layout_constraintStart_toEndOf="@+id/layoutEdSearch"
+                         app:layout_constraintTop_toTopOf="@+id/layoutEdSearch"
+                         app:layout_constraintBottom_toBottomOf="@+id/layoutEdSearch"
+                         app:layout_constraintEnd_toEndOf="parent"
+                        />-->
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/grey"
+
+                        app:layout_constraintTop_toBottomOf="@+id/layoutEdSearch" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vehicle_list_rc"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="5dp"
+                    tools:listitem="@layout/search_vehicle_rc_item"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_search"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
